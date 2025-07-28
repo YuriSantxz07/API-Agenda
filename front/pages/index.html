@@ -3,18 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Agendamento Simples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h2>Agendar</h2>
-    <input type="text" id="titulo" placeholder="Título" />
-    <input type="text" id="descricao" placeholder="Descrição" />
-    <input type="datetime-local" id="dataHora" />
-    <input type="text" id="local" placeholder="Local" />
-    <button id="btn-agendar">Agendar</button>
+    <div class="container">
+      <div class="form-section">
+        <h2>Agendar</h2>
+        <input type="text" id="titulo" placeholder="Título" />
+        <input type="text" id="descricao" placeholder="Descrição" />
+        <input type="datetime-local" id="dataHora" />
+        <input type="text" id="local" placeholder="Local" />
+        <button id="btn-agendar">Agendar</button>
+      </div>
 
-    <h2>Lista de Agendamentos</h2>
-    <ul id="lista"></ul>
+      <div class="list-section">
+        <h2>Lista de Agendamentos</h2>
+        <ul id="lista"></ul>
+      </div>
+    </div>
   </body>
 </html>

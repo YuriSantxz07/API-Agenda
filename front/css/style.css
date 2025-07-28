@@ -1,0 +1,197 @@
+/* General Body Styling - Dark Theme */
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main Container for the layout */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Left Section - Form for scheduling */
+.form-section {
+    flex: 1;
+    padding: 30px;
+    background-color: #3a3a3a;
+    border-right: 1px solid #4f4f4f;
+}
+
+.form-section h2 {
+    color: #81c784;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-section input[type="text"],
+.form-section input[type="datetime-local"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #4a4a4a;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-section input[type="text"]:focus,
+.form-section input[type="datetime-local"]:focus {
+    border-color: #81c784;
+    box-shadow: 0 0 8px rgba(129, 199, 132, 0.4);
+    outline: none;
+}
+
+.form-section button {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #66bb6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.15em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.form-section button:hover {
+    background-color: #5cb85c;
+    transform: translateY(-3px);
+}
+
+/* Right Section - List of appointments (Larger) */
+.list-section {
+    flex: 2;
+    padding: 30px;
+    background-color: #333333;
+}
+
+.list-section h2 {
+    color: #90caf9;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+#lista {
+    list-style: none;
+    padding: 0;
+}
+
+#lista li {
+    background-color: #4a4a4a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column; /* Padrão: empilha em telas pequenas */
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    color: #cccccc;
+}
+
+#lista li:hover {
+    transform: translateY(-4px);
+    background-color: #555555;
+}
+
+#lista li strong {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#lista li .details {
+    flex-grow: 1; /* Permite que os detalhes ocupem o espaço disponível */
+    line-height: 1.6;
+}
+
+/* Novo estilo para o contêiner de botões */
+#lista li .buttons {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    /* Para telas maiores, os botões ficarão à direita e alinhados */
+    margin-left: auto; /* Empurra os botões para a direita */
+    flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+#lista li button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    /* Remove margin-left original, pois o gap já faz o espaçamento */
+    margin-left: 0;
+}
+
+#lista li button:first-of-type { /* Edit button */
+    background-color: #2196F3;
+    color: white;
+}
+
+#lista li button:first-of-type:hover {
+    background-color: #1976D2;
+}
+
+#lista li button:last-of-type { /* Delete button */
+    background-color: #F44336;
+    color: white;
+}
+
+#lista li button:last-of-type:hover {
+    background-color: #D32F2F;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #lista li {
+        flex-direction: row; /* Layout horizontal em telas maiores */
+        justify-content: space-between; /* Distribui espaço entre conteúdo e botões */
+        align-items: center; /* Alinha verticalmente no centro */
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .form-section {
+        border-right: none;
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    #lista li .buttons {
+        /* Em telas pequenas, alinha os botões ao final da coluna */
+        align-self: flex-end;
+        margin-left: 0; /* Garante que não haja margin-left sobrando */
+    }
+}
